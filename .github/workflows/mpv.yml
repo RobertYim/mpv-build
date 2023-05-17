@@ -1,0 +1,23 @@
+name: mpv-m1build
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build_mpv:
+    runs-on: macos-latest
+    steps:
+      - name: see what's happenin'
+        run: ls -Ar
+      - name: run script
+        run: sh ./build-mpv_silicon.sh
+        shell: bash
+      # - name: brew install mpv
+      #   run: brew install mpv --build-bottle --bottle-arch=arm64_monterey
+      # - name: see what's happenin'
+      #   run: which brew && ls
+      # - name: clone mpv
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: mpv-player/mpv
+      # - name: build mpv
+      #   run: cd mpv && mkdir build/
